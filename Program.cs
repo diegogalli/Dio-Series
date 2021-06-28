@@ -23,10 +23,10 @@ namespace Dio.Series
                         AtualizarSerie();
                         break;
                     case "4":
-                        //ExcluirSerie();
+                        ExcluirSerie();
                         break;
                     case "5":
-                       // VisualizarSerie();
+                        VisualizarSerie();
                         break;
                     case "6":
                         Console.Clear();
@@ -40,6 +40,22 @@ namespace Dio.Series
 
             Console.WriteLine("Obrigado por utilizar o Gallifix.");
             Console.ReadLine();         
+        }
+
+        private static void ExcluirSerie()
+        {
+            Console.Write("Digite o ID da Série: ");
+            int indiceSerie = int.Parse(Console.ReadLine());
+
+            repositorio.Exclui(indiceSerie);
+        }
+
+        private static void VisualizarSerie()
+        {
+            Console.Write("Digite o ID da Série: ");
+            int indiceSerie = int.Parse(Console.ReadLine());
+
+            var serie = repositorio.RetornaPorId(indiceSerie);
         }
 
         private static void AtualizarSerie()
